@@ -26,31 +26,22 @@ class Asse_Filter_Upload {
     }
 
     public function sanitize_filename_specialchars( $filename ) {
-        $ext = explode('.', $filename); // explode with extension
-        $ext = end($ext); // pointer to last entry
-        // replace all weird characters
-        $sanitized = preg_replace('/[^a-zA-Z0-9-_.]/','', substr(remove_accents($string), 0, -(strlen($ext)+1)));
-        // replace dots inside filename
-        $sanitized = str_replace('.','-', $sanitized);
-        
-        return strtolower($sanitized.'.'.$ext);
+      $pathinfo = pathinfo( $filename );
+      $pathinfo[ 'filename' ] = preg_replace('/[^a-zA-Z0-9-_.]/','', remove_accents($pathinfo[ 'filename' ]));
+      return strtolower($pathinfo[ 'filename' ] . '.' . $pathinfo[ 'extension' ] );
     }
 
     public function filter_mime_types() {
-        return [
-            'jpg|jpeg|jpe' => 'image/jpeg',
-            'gif' =>  'image/gif',
-            'png' =>  'image/png',
-            // audio, video
-            'mp4|m4v' => 'video/mp4',
-            'mp3|m4a|m4b' => 'audio/mpeg',
-            // zip
-            'zip' => 'application/zip',
-            // pdf
-            'pdf' => 'application/pdf'
-        ];
+      return [
+        'jpg|jpeg|jpe' => 'image/jpeg',
+        'gif'          =>  'image/gif',
+        'png'          =>  'image/png',
+        'mp4|m4v'      => 'video/mp4',
+        'mp3|m4a|m4b'  => 'audio/mpeg',
+        'zip'          => 'application/zip',
+        'pdf'          => 'application/pdf'
+      ];
     }
 }
 
 $asse_upload = new Asse_Filter_Upload();
-
