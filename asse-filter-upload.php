@@ -2,7 +2,7 @@
 
 defined( 'ABSPATH' ) || exit;
 
-class Asse_Upload {
+class Asse_Filter_Upload {
 
     public function __construct() {
         add_filter( 'upload_dir', array( $this, 'set_upload_dir' ) );
@@ -52,4 +52,5 @@ class Asse_Upload {
     }
 }
 
+$asse_upload = new Asse_Filter_Upload();
 
