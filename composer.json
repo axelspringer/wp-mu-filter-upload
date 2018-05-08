@@ -1,7 +1,7 @@
 {
     "name": "axelspringer/wp-mu-filter-upload",
     "type": "wordpress-muplugin",
-    "description": "asse filter upload",
+    "description": "wp-mu filter upload",
     "keywords": [
         "wordpress",
         "muplugin"
