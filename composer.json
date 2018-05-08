@@ -1,5 +1,5 @@
 {
-    "name": "muplugin/asse-filter-upload",
+    "name": "axelspringer/asse-filter-upload",
     "type": "wordpress-muplugin",
     "description": "asse filter upload",
     "keywords": [
@@ -12,7 +12,7 @@
             "homepage": "http://www.axelspringer.de"
         }
     ],
-    "homepage": "https://as-stash.axelspringer.de/projects/WPMUP/repos/asse-filter-upload/browse",
+    "homepage": "https://github.com/axelspringer/wp-mu-filter-upload",
     "license": "proprietary",
     "extra": {
         "installer-name": "asse-filter-upload"
